@@ -20,13 +20,6 @@ export const generateStudyGuideWithHF = async (topic, options) => {
     // You can get a free API token from https://huggingface.co/settings/tokens
     const apiToken = import.meta.env.VITE_HF_API_TOKEN
     
-    console.log('🔍 DEBUG: Environment variable check:')
-    console.log('  - import.meta.env keys:', Object.keys(import.meta.env))
-    console.log('  - VITE_HF_API_TOKEN exists:', !!import.meta.env.VITE_HF_API_TOKEN)
-    console.log('  - VITE_HF_API_TOKEN value:', import.meta.env.VITE_HF_API_TOKEN ? 'Found' : 'Not found')
-    console.log('  - Full import.meta.env:', import.meta.env)
-    console.log('  - apiToken variable:', apiToken)
-    
     if (!apiToken || apiToken === 'your_huggingface_api_token_here') {
       console.warn('❌ No valid Hugging Face API token found. Using fallback method.')
       return generateFallbackStudyGuide(topic, options)
