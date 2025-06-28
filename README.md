@@ -37,6 +37,9 @@ EduMate is an innovative AI-powered web application that generates personalized 
 
 **Deployed Application:** [EduMate Live Demo](https://edumate-ai.vercel.app)
 
+## 🌐 Live Demo
+**Visit the live application:** [EduMate on Vercel](https://edumate-srinidhisn5.vercel.app/)
+
 ---
 
 ## 📦 **Installation & Setup**

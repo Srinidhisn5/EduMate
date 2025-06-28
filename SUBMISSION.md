@@ -29,7 +29,7 @@
 
 ## 🚀 **Live Demo & Repository**
 
-- **🌐 Live Application:** [Your Vercel URL - to be added after deployment]
+- **🌐 Live Application:** [https://edumate-srinidhisn5.vercel.app/](https://edumate-srinidhisn5.vercel.app/)
 - **📁 GitHub Repository:** https://github.com/Srinidhisn5/EduMate
 - **📖 Documentation:** Complete README.md with setup instructions
 
