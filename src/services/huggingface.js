@@ -25,16 +25,11 @@ export const generateStudyGuideWithHF = async (topic, options) => {
       return generateFallbackStudyGuide(topic, options)
     }
 
-    console.log('✅ Using Hugging Face API with token:', apiToken.substring(0, 10) + '...')
-
     // Try using a more reliable model for text generation
     const modelUrl = `${HF_API_URL}/${MODELS.TEXT_GENERATION}`
-    console.log('🌐 Making request to:', modelUrl)
 
     // Enhanced prompt for better topic-specific information
     const enhancedPrompt = `Create a study guide for ${topic}. Include key concepts, applications, and learning tips.`
-
-    console.log('📤 Sending request with prompt:', enhancedPrompt)
 
     const response = await fetch(modelUrl, {
       method: 'POST',
@@ -53,9 +48,6 @@ export const generateStudyGuideWithHF = async (topic, options) => {
         }
       })
     })
-
-    console.log('📡 Response status:', response.status)
-    console.log('📡 Response ok:', response.ok)
 
     if (!response.ok) {
       console.error('❌ Hugging Face API Error:', response.status, response.statusText)
@@ -80,11 +72,8 @@ export const generateStudyGuideWithHF = async (topic, options) => {
     }
 
     const data = await response.json()
-    console.log('📦 Hugging Face API Response:', data)
     
     const generatedText = data[0]?.generated_text || data.generated_text || ''
-
-    console.log('📝 Generated text:', generatedText)
 
     // Structure the response with proper arrays
     const result = {
@@ -98,7 +87,6 @@ export const generateStudyGuideWithHF = async (topic, options) => {
       includeVideos: options.includeVideos
     }
 
-    console.log('✅ Generated study guide structure:', result)
     return result
 
   } catch (error) {

@@ -7,13 +7,6 @@ import { generateStudyGuideWithHF } from './services/huggingface'
 import { generateStudyGuideFromWikipedia } from './services/wikipedia'
 import { BeamsBackground } from './components/ui/beams-background'
 
-// Debug: Log all environment variables
-console.log('🔍 APP DEBUG: All environment variables:')
-console.log('  - import.meta.env:', import.meta.env)
-console.log('  - VITE_HF_API_TOKEN:', import.meta.env.VITE_HF_API_TOKEN)
-console.log('  - All VITE_ keys:', Object.keys(import.meta.env).filter(key => key.startsWith('VITE_')))
-console.log("🔍 import.meta.env:", import.meta.env);
-
 function App() {
   const [studyGuide, setStudyGuide] = useState(null)
   const [loading, setLoading] = useState(false)
